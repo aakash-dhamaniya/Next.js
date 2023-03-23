@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useRouter } from "next/router";
 const ErrorPage = () => {
+  const router = useRouter();
   return (
     <>
       <div>
@@ -11,7 +12,13 @@ const ErrorPage = () => {
           The page you are looking for might have been removed had its name
           changed or is temprarily unavailable.
         </p>
-        <a href="/">Click here to home page</a>
+        <button
+          onClick={() => {
+            router.push("/");
+          }}
+        >
+          Click here to home page
+        </button>
       </div>
     </>
   );
