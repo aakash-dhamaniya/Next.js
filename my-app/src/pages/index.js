@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <nav>
-        <ul>
+        <ul style={{ display: "flex", justifyContent: "space-around" }}>
           <Link href="/">Home</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">contact</Link>
