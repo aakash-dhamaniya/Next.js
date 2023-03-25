@@ -12,7 +12,7 @@ const Header = () => {
           <MenuItem title="HOME" address="/" Icon={AiFillHome} />
         </div>
         <div className="">
-          <MenuItem title="ABOUT" address="/About" Icon={BsInfoCircleFill} />
+          <MenuItem title="ABOUT" address="/about" Icon={BsInfoCircleFill} />
         </div>
       </div>
       <div className="flex items-center space-x-5">
