@@ -5,7 +5,7 @@ import React from "react";
 import { useSearchParams } from "next/navigation";
 function NavbarItem({ title, param }) {
   const searchParams = useSearchParams(); // this hook help to get something from url
-  const genre = searchParams.get("genere"); //it will take genera from url bar
+  const genre = searchParams.get("genre"); //it will take genera from url bar
   return (
     <div>
       <Link
@@ -14,7 +14,7 @@ function NavbarItem({ title, param }) {
           genre === param &&
           "underline underline-offset-8 decoration-4 decoration-amber-500 rounded-lg"
         }`}
-        href={`/?genere=${param}`}
+        href={`/?genre=${param}`}
       >
         {title}
       </Link>
