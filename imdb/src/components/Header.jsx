@@ -6,7 +6,7 @@ import Link from "next/link";
 import DarkModeSwitch from "./DarkModeSwitch";
 const Header = () => {
   return (
-    <div className=" flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
+    <div className=" border-2 flex justify-between mx-2 max-w-6xl sm:mx-auto items-center py-6">
       <div className="flex">
         <div>
           <MenuItem title="HOME" address="/" Icon={AiFillHome} />

@@ -10,7 +10,6 @@ const DarkModeSwitch = () => {
     setMounted(true);
   }, []);
   const currentTheme = theme === "system" ? systemTheme : theme;
-  console.log("chekking currnet", currentTheme);
   return (
     <>
       {mounted &&
