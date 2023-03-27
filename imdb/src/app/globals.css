@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* this is to remove scroll bar but some time is dosnt work */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* for double surety */
+html {
+  scrollbar-width: none;
+}
