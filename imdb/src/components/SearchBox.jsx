@@ -9,6 +9,7 @@ export default function SearchBox() {
     e.preventDefault();
 
     router.push(`/search/${search}`);
+    setSearch("");
   };
   return (
     <form
