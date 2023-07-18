@@ -1,12 +1,16 @@
 import React from "react";
 import { MongoClient, ObjectId } from "mongodb";
-import { useRouter } from "next/router";
+import Head from "next/head";
 export default function MeetupDetails(props) {
   console.log(props.meetupData);
 
   return (
     <>
-      <section>
+      <Head>
+        <title>{props.meetupData.title}</title>
+        <meta name="description" content={props.meetupData.description} />
+      </Head>
+      <section style={{ textAlign: "center" }}>
         <img
           style={{ width: "100%" }}
           src={props.meetupData.image}
@@ -59,6 +63,7 @@ export async function getStaticProps(context) {
         title: selectedMeetup.title,
         address: selectedMeetup.address,
         image: selectedMeetup.image,
+        description: selectedMeetup.description,
       },
     },
   };

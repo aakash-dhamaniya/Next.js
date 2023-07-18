@@ -1,8 +1,19 @@
 import MeetupList from "@/components/meetups/MeetupList";
 import { MongoClient } from "mongodb";
-
+import Head from "next/head";
 export default function HomePage(props) {
-  return <MeetupList meetups={props} />;
+  return (
+    <>
+      <Head>
+        <title>React Meetup</title>
+        <meta
+          name="description"
+          content="Browse list of highly active React meetups! "
+        />
+      </Head>
+      <MeetupList meetups={props} />
+    </>
+  );
 }
 export async function getStaticProps() {
   //fetch api
