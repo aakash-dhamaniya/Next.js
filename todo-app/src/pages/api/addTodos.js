@@ -5,10 +5,10 @@ async function handler(req, res) {
 
     // console.log("data in api ", data);
     const client = await MongoClient.connect(
-      "mongodb+srv://root:root@cluster0.odeptdc.mongodb.net/todos?retryWrites=true&w=majority"
+      "mongodb+srv://root:root@cluster0.odeptdc.mongodb.net/?retryWrites=true&w=majority"
     );
     const db = client.db();
-    const todosCollection = db.collection("incomplete");
+    const todosCollection = db.collection("todos");
     const result = await todosCollection.insertOne(data);
     console.log("api/addTodos", result);
     res.status(201).json({ message: "task inserted!", result });

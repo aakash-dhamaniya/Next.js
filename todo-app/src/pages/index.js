@@ -13,17 +13,19 @@ export async function getStaticProps() {
   //getting data
 
   const client = await MongoClient.connect(
-    "mongodb+srv://root:root@cluster0.odeptdc.mongodb.net/todos?retryWrites=true&w=majority"
+    "mongodb+srv://root:root@cluster0.odeptdc.mongodb.net/?retryWrites=true&w=majority"
   );
   const db = client.db();
-  const todosCollection = db.collection("incomplete");
+  const todosCollection = db.collection("todos");
   const todos = await todosCollection.find().toArray();
   client.close();
+
   return {
     props: {
       todos: todos.map((todo) => ({
         text: todo.text,
         id: todo._id.toString(),
+        completed: todo.completed,
       })),
     },
     revalidate: 10,
