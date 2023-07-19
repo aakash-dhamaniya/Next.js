@@ -1,6 +1,8 @@
-import { AiOutlineDelete, AiOutlineCheckSquare } from "react-icons/ai";
-export default function ToDoList({ toDos, deleteToDo }) {
-  console.log(toDos);
+import { AiOutlineCheckSquare, AiOutlineDelete } from "react-icons/ai";
+
+export default function ToDoList(props) {
+  const { todos } = props;
+  console.log(todos);
   return (
     <div className="overflow-x-auto mt-10">
       <table className="table">
@@ -13,7 +15,7 @@ export default function ToDoList({ toDos, deleteToDo }) {
         </thead>
         <tbody>
           {/* row 1 */}
-          {toDos.map((item) => {
+          {todos.map((item) => {
             return (
               <tr key={item.id}>
                 <td className="w-full">{item.text}</td>
